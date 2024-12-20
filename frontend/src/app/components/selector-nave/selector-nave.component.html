@@ -1,0 +1,8 @@
+<div class="btn-group">
+  <button
+    *ngFor="let nave of naves"
+    class="btn btn-primary"
+    (click)="seleccionarNave(nave.id)">
+    {{ nave.nombre }}
+  </button>
+</div>

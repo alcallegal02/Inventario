@@ -1,0 +1,58 @@
+<!-- Tabla de Trabajadores -->
+<ng-container *ngIf="trabajadores && trabajadores.length > 0">
+  <h2>Equipos</h2>
+  <table class="tabla_equipos table-striped">
+    <thead>
+      <tr>
+        <th class="columna_trabajador">Trabajador</th>
+        <th class="columna_equipos">Equipos</th>
+        <th class="columna_impresora">Impresoras</th> <!-- Nueva columna para impresoras -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let trabajador of trabajadores">
+        <td class="columna_trabajador">{{ trabajador.nombre }} {{ trabajador.apellidos }}</td>
+        <td class="columna_equipos">
+          <ul>
+            <li *ngFor="let equipo of trabajador.equipos">
+              - {{ equipo.tipo }} - {{ equipo.marca }} ({{ equipo.numero_serie }}) - IP: {{ equipo.ip || 'Sin IP' }}
+            </li>
+          </ul>
+        </td>
+        <!-- Mostrar impresoras solo si hay impresoras asociadas a los equipos -->
+        <td class="columna_impresora" *ngIf="tieneImpresoras(trabajador)">
+          <ul>
+            <li *ngFor="let equipo of trabajador.equipos">
+              <ul *ngIf="equipo.impresoras && equipo.impresoras.length > 0">
+                <li *ngFor="let impresora of equipo.impresoras">
+                  {{ impresora.marca }} ({{ impresora.modelo }}) - IP: {{ impresora.ip || 'Sin IP' }}
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+
+<!-- Tabla de Impresoras -->
+<ng-container *ngIf="impresoras && impresoras.length > 0">
+  <h2>Impresoras</h2>
+  <table class="tabla_impresoras table-striped">
+    <thead>
+      <tr>
+        <th class="columna_marca">Marca</th>
+        <th class="columna_modelo">Modelo</th>
+        <th class="columna_ip">IP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let impresora of impresoras">
+        <td class="columna_marca">{{ impresora.marca }}</td>
+        <td class="columna_modelo">{{ impresora.modelo }}</td>
+        <td class="columna_ip">{{ impresora.ip || 'Sin IP' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>

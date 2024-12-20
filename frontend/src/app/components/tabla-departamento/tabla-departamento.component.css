@@ -1,0 +1,82 @@
+ul {
+    list-style-type: none;
+    padding: 0px; /* Elimina la indentación por defecto */
+    margin: 0px;
+  }
+  
+  /* Estilos para centrar la tabla en el medio de la pantalla */
+  .tabla_equipos {
+    width: 45%; /* Ancho de la tabla, puedes ajustarlo según lo necesites */
+    margin: 5px auto; /* Centrado automático con margen arriba y abajo */
+    border-collapse: collapse; /* Para que los bordes de las celdas se fusionen */
+  }
+  
+  .columna_trabajador {
+    width: 28%; /* Ancho de la columna trabajador */
+  }
+  
+  .columna_equipos {
+    width: 40%; /* Ancho de la columna equipos */
+  }
+  
+  .columna_impresora {
+    width: 32%; /* Ancho de la columna impresora */
+  }
+
+  /* Estilos para centrar la tabla en el medio de la pantalla */
+  .tabla_impresoras {
+    width: 30%; /* Ancho de la tabla, puedes ajustarlo según lo necesites */
+    margin: 5px auto; /* Centrado automático con margen arriba y abajo */
+    border-collapse: collapse; /* Para que los bordes de las celdas se fusionen */
+  }
+  
+  .columna_marca {
+    width: 33.3%; /* Ancho de la columna trabajador */
+  }
+  
+  .columna_modelo {
+    width: 33.3%; /* Ancho de la columna equipos */
+  }
+  
+  .columna_ip {
+    width: 33.3%; /* Ancho de la columna impresora */
+  }
+  
+  table {
+    width: 100%; /* Asegura que la tabla ocupe todo el ancho del contenedor */
+    margin: 5px auto; /* Centrado automático con margen arriba y abajo */
+    border-collapse: collapse; /* Para que los bordes de las celdas se fusionen */
+  }
+  
+  /* Bordes de la tabla */
+  table, th, td {
+    border: 1px solid #000; /* Borde negro para la tabla, cabeceras y celdas */
+  }
+  
+  /* Estilo de las cabeceras */
+  th {
+    background-color: #f2f2f2; /* Fondo gris claro para las cabeceras */
+    text-align: center; /* Centrado del texto de las cabeceras */
+    padding: 6px; /* Espaciado en las celdas de las cabeceras */
+  }
+  
+  /* Estilo para las celdas de la tabla */
+  td {
+    text-align: left; /* Alineación del texto de las celdas */
+    padding: 4px; /* Espaciado en las celdas */
+    text-align: center; /* Centrado del texto dentro de las celdas */
+  }
+  
+  /* Estilo para las filas de la tabla, alternando colores */
+  tr:nth-child(even) {
+    background-color: #f9f9f9; /* Color de fondo para las filas pares */
+  }
+  
+  tr:hover {
+    background-color: #eaeaea; /* Color de fondo al pasar el mouse sobre las filas */
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  

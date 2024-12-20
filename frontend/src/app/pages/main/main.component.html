@@ -1,0 +1,8 @@
+<app-selector-nave (naveSeleccionada)="cargarDepartamentos($event)"></app-selector-nave>
+
+<ng-container *ngFor="let departamento of departamentos">
+  <div *ngIf="departamento.tieneDatos">
+    <h1>{{ departamento.nombre }}</h1>
+    <app-tabla-departamento [departamentoId]="departamento.id"></app-tabla-departamento>
+  </div>
+</ng-container>
