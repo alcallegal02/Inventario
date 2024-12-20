@@ -23,7 +23,6 @@
     "@angular/ssr": "^19.0.2",
     "@auth0/angular-jwt": "^5.2.0",
     "@types/jwt-decode": "^2.2.1",
-    "bootstrap": "^5.3.3",
     "express": "^4.18.2",
     "flex-layout": "^1.0.1",
     "jwt-decode": "^4.0.0",

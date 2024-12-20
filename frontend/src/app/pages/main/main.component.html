@@ -1,4 +1,4 @@
-<app-nav></app-nav>
+<app-selector-nave (naveSeleccionada)="cargarDepartamentos($event)"></app-selector-nave>
 
 <ng-container *ngFor="let departamento of departamentos">
   <div *ngIf="departamento.tieneDatos">
