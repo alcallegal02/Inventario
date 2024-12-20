@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../services/data/data.service';
 import { CommonModule } from '@angular/common';
-import { SelectorNaveComponent } from '../../components/selector-nave/selector-nave.component';
 import { TablaDepartamentoComponent } from '../../components/tabla-departamento/tabla-departamento.component';
+import { NavComponent } from '../../components/nav/nav.component';
 
 @Component({
   selector: 'app-main',
-  imports: [CommonModule, SelectorNaveComponent, TablaDepartamentoComponent],
+  imports: [CommonModule, NavComponent, TablaDepartamentoComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })

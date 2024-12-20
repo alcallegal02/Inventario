@@ -1,0 +1,23 @@
+<!-- Botón para abrir el menú lateral -->
+<button class="btn btn-outline-light" (click)="toggleMenu()">☰ Menu</button>
+
+<!-- Menú lateral (offcanvas) -->
+<div 
+  class="offcanvas offcanvas-start text-bg-dark" 
+  [ngClass]="{'show': isMenuOpen}"
+  tabindex="-1"
+  role="dialog"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Menú</h5>
+    <button type="button" class="btn-close btn-close-white" (click)="toggleMenu()" aria-label="Cerrar"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="list-group">
+      <li class="list-group-item bg-dark text-white"><a href="#" class="text-white text-decoration-none">Opción 1</a></li>
+      <li class="list-group-item bg-dark text-white"><a href="#" class="text-white text-decoration-none">Opción 2</a></li>
+      <li class="list-group-item bg-dark text-white"><a href="#" class="text-white text-decoration-none">Opción 3</a></li>
+      <li class="list-group-item bg-dark text-white"><a href="#" class="text-white text-decoration-none">Opción 4</a></li>
+    </ul>
+  </div>
+</div>

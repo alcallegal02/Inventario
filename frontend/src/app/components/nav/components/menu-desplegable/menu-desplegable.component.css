@@ -1,0 +1,9 @@
+/* Sobrescribir estilos si es necesario */
+.offcanvas {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .offcanvas.show {
+    transform: translateX(0);
+  }
+  

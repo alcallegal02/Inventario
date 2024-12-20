@@ -10,7 +10,7 @@ class Departamento(models.Model):
 
 class Usuario(models.Model):
     nombre_usuario = models.CharField(max_length=100, unique=True)
-    contraseña = models.CharField(max_length=128)  # Se usará el sistema de autenticación de Django
+    contraseña = models.CharField(max_length=128)
     is_superuser = models.BooleanField(default=False)
 
 class Trabajador(models.Model):
@@ -33,5 +33,25 @@ class Equipo(models.Model):
     fecha_entrega = models.DateField(default=date.today)
     fecha_devolucion = models.DateField(null=True, blank=True)
     ip = models.GenericIPAddressField(null=True, blank=True)
-    trabajador = models.ForeignKey(Trabajador, on_delete=models.CASCADE, related_name="equipos")
+    trabajador = models.ForeignKey(
+        Trabajador, 
+        on_delete=models.SET_NULL, 
+        null=True, 
+        blank=True, 
+        related_name="equipos"
+    )
     impresoras = models.ManyToManyField(Impresora, blank=True, related_name="equipos")
+    en_stock = models.BooleanField(default=False)
+
+    def save(self, *args, **kwargs):
+        # Validar si el equipo está en stock
+        if self.en_stock:
+            # Si está en stock, no debe tener trabajador asignado
+            self.trabajador = None
+        else:
+            # Si no está en stock, debe tener un trabajador asignado
+            if not self.trabajador:
+                raise ValueError("Un equipo no en stock debe tener un trabajador asignado.")
+        
+        # Llamar al método save original
+        super().save(*args, **kwargs)
